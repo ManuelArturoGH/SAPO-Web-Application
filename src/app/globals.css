@@ -1,42 +1,55 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
+/* === Reset y estilos generales === */
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Centrado general */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Coloca elementos uno debajo de otro */
+    min-height: 100vh;
+    padding: 20px;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* === Tema claro === */
+body.light-mode {
+    background-color: #f8f9fa; /* gris claro Bootstrap */
+    color: #212529; /* texto oscuro */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* === Tema oscuro === */
+body.dark-mode {
+    background-color: #121212; /* negro */
+    color: #f8f9fa; /* texto claro */
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.table-dark {
+    background-color: #343a40 !important;
+}
+
+.btn-toggle-theme {
+    margin-bottom: 20px;
+}
+
+/* Mantener el mismo tamaño en la tabla */
+.table-fixed-height {
+    display: block;
+    max-height: 550px;   /* altura fija para el área de filas */
+    overflow-y: auto;    /* scroll si hay más filas */
+}
+
+.table-fixed-height thead,
+.table-fixed-height tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* evita que cambien los anchos */
+}
+
+.table-fixed-height tbody {
+    display: block;
+    min-height: 450px;  /* altura del cuerpo */
 }
