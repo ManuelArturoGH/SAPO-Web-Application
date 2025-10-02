@@ -24,7 +24,7 @@ export default function Users (){
                     headers: { "Content-Type": "application/json" }
                 });
                 const data = JSON.parse(response.data);
-                const employees : ITable = data.map((item: IEmployee) => new Employee(item.id, item.name, item.fingerPrintId, item.isActive, item.privilege));
+                const employees  = data.map((item: IEmployee) => new Employee(item.id, item.name, item.fingerPrintId, item.isActive, item.privilege));
                 setRows(employees);
             } catch (error) {
                 console.error("Error fetching data:", error);

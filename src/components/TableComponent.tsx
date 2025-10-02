@@ -8,14 +8,14 @@ import {
     SortingState,
 } from "@tanstack/react-table";
 import { useState } from "react";
-import {DataTableProps, IEmployee, ITable} from "../interfaces/ITable";
+import {AttendanceRecord, DataTableProps, IEmployee, ITable} from "../interfaces/ITable";
 import {exportToExcel} from "../app/scripts/main";
 import {IAttendanceRecord} from "../interfaces/ITable";
 
 
 
 
-export function TableComponent<TData, TValue>( {
+export function TableComponent<TData extends ITable | AttendanceRecord, TValue>( {
                                                   columns,
                                                   data,
                                               }: DataTableProps<TData, TValue>) {

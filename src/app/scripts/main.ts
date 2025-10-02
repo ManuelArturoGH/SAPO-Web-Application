@@ -1,6 +1,6 @@
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
-import {IAttendanceRecord, IEmployee, ITable} from "../../interfaces/ITable";
+import {AttendanceRecord, IAttendanceRecord, IEmployee, ITable} from "../../interfaces/ITable";
 
 export const exportToExcel = (rows: Array<AttendanceRecord | IEmployee | ITable>, fileName: string) => {
     // 1. Convert data to worksheet
